@@ -1,0 +1,4 @@
+Código de un lenguaje de Programacíon, cargado desde un formulario mostrando su contenido, encontrando expresiones matematicas sencillas y booleanas, y po ultimo borrado de comentarios.
+
+Asesor: Jose Leonel Pech May
+Instituto Tecnológico Superior de Valladolid.
