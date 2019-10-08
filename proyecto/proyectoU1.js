@@ -31,6 +31,14 @@ function encriptando(){
 	document.getElementById("encriptado").innerHTML = remplazo;
 
 }
+
+document.getElementById("eliminar").addEventListener("click",eliminando);
+function eliminando(){
+	var eli = document.getElementById("parrafo").innerHTML;
+	var eliminarc = eli.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm,'$1')
+	document.getElementById("eliminado").innerHTML = eliminarc;
+}
+
 document.getElementById("buscar").addEventListener("click",buscando);
 
 
