@@ -1,4 +1,8 @@
-CÛdigo de un lenguaje de ProgramacÌon, cargado desde un formulario mostrando su contenido, encontrando expresiones matematicas sencillas y booleanas, y po ultimo borrado de comentarios.
+C√≥digo de un lenguaje de Programac√≠on, cargado desde un formulario mostrando su contenido, encontrando expresiones matematicas sencillas y booleanas, y po ultimo borrado de comentarios.
+
+ESTE PROYECTO SOLO PUEDE FUNCIONAR, SI ESTA EN MODO LOCALHOST
+DE MODO QUE SI SOLO SE EJECUTA EL ARCHIVO index.html, no funcionar√°.
+SE NECESITA AGRAGAR LA CARPETA  "proyecto"  A UN SERVIDOR LOCAL COMO (WAMPP O XAMPP)
 
 Asesor: Jose Leonel Pech May
-Instituto TecnolÛgico Superior de Valladolid.
+Instituto Tecnol√≥gico Superior de Valladolid.
