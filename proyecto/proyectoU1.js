@@ -29,10 +29,18 @@ function encriptando(){
 	remplazo = remplazo.replace(/[m|M]/g,"8");
 
 	document.getElementById("encriptado").innerHTML = remplazo;
-	
-	
-}
 
+}
+document.getElementById("buscar").addEventListener("click",buscando);
+
+
+function buscando(){
+	var busc = document.getElementById("parrafo").innerHTML;
+	//var expresion = /(\w+\s*[=]{1,2}[\s]*[0-9]+[\s]*[+|-|*|/]{1}[\s]*[\w]+[;]|\w+\s+.{1}.{1}\s+[0-9]+)/g;
+	var expresion = /([\w]+\s.\s[\w]\s.\s[\w](;)|[\w]\s+.\s+[\w]\s+.\s+[\w](;))|([\w].[(][\w].[\w][)](;))/g;
+	var result = busc.match(expresion);
+	document.getElementById("buscado").innerHTML = result;
+}
 }
 
 
