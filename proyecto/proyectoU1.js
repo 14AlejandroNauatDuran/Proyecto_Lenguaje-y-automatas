@@ -18,9 +18,14 @@ function obtenercontenido(){
 document.getElementById("encriptar").addEventListener("click",encriptando);
 
 function encriptando(){
-	
+	var expresCom = /["]{1}([\s]*[\w]*)+["]/gm;
 	var enc = document.getElementById("parrafo").innerHTML;
-	var remplazo = enc.replace(/[a|A]/g,"b");
+
+	var rescom = enc.match(expresCom);
+	document.getElementById("comillas").innerHTML = rescom;
+
+	var obt = document.getElementById("comillas").innerHTML;
+	var remplazo = obt.replace(/[a|A]/g,"b");
 	remplazo = remplazo.replace(/[p|P]/g,"z");
 	remplazo = remplazo.replace(/[i|I]/g,"w");
 	remplazo = remplazo.replace(/[n|N]/g,"p");
@@ -45,9 +50,14 @@ document.getElementById("buscar").addEventListener("click",buscando);
 function buscando(){
 	var busc = document.getElementById("parrafo").innerHTML;
 	//var expresion = /(\w+\s*[=]{1,2}[\s]*[0-9]+[\s]*[+|-|*|/]{1}[\s]*[\w]+[;]|\w+\s+.{1}.{1}\s+[0-9]+)/g;
-	var expresion = /([\w]+\s.\s[\w]\s.\s[\w](;)|[\w]\s+.\s+[\w]\s+.\s+[\w](;))|([\w].[(][\w].[\w][)](;))/g;
+	var expresion = /[\w]+\s*[=]\s*[\w]+\s*[+|-|*|/]\s*[\w]+|[\w]\s*[=][(][\w]{1}[+|-|*|/][\w]{1}[)]/gm
 	var result = busc.match(expresion);
 	document.getElementById("buscado").innerHTML = result;
+	var busc2 = document.getElementById("parrafo").innerHTML;
+	//[\w]+\s*(<|>|<=|>=)\s*[\w]+
+	var expresion2 = /[\w]+\s*(<|>|<=|>=)\s*[\w]+\b/gm;
+	var result2 = busc2.match(expresion2);
+	document.getElementById("buscado2").innerHTML = result2;
 }
 }
 
