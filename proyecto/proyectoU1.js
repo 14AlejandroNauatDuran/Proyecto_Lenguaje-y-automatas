@@ -49,15 +49,27 @@ document.getElementById("buscar").addEventListener("click",buscando);
 
 function buscando(){
 	var busc = document.getElementById("parrafo").innerHTML;
-	//var expresion = /(\w+\s*[=]{1,2}[\s]*[0-9]+[\s]*[+|-|*|/]{1}[\s]*[\w]+[;]|\w+\s+.{1}.{1}\s+[0-9]+)/g;
 	var expresion = /[\w]+\s*[=]\s*[\w]+\s*[+|-|*|/]\s*[\w]+|[\w]\s*[=][(][\w]{1}[+|-|*|/][\w]{1}[)]/gm
 	var result = busc.match(expresion);
 	document.getElementById("buscado").innerHTML = result;
-	var busc2 = document.getElementById("parrafo").innerHTML;
-	//[\w]+\s*(<|>|<=|>=)\s*[\w]+
-	var expresion2 = /[\w]+\s*(<|>|<=|>=)\s*[\w]+\b/gm;
-	var result2 = busc2.match(expresion2);
-	document.getElementById("buscado2").innerHTML = result2;
+	
+	var busc4 = document.getElementById("parrafo").innerHTML;
+	var nuevobusc4 = busc4.replace(/(&gt)/gm,"\x40");
+	nuevobusc4 = nuevobusc4.replace(/(&lt)/gm,"\x23");
+	document.getElementById("buscado4").innerHTML = nuevobusc4;
+
+	var busc3 = document.getElementById("buscado4").innerHTML;
+	//var expresion2 = /[a-z0-9]+\s*(<|\>|<=|>=|==)\s*[a-z0-9]+\b/;
+	//var expresion2 = /[\w]+\s*(\x3E|\x3c|\x3e\x3d|\x3c\x3d|\x3d\x3d)\s*[\w]+/gm;
+	var expresion3 = /[\w]+\s*(\x40;|\x23;|\x40;=|\x23;=|==)\s*[\w]+/gm;
+	var result3 = busc3.match(expresion3);
+	document.getElementById("buscado3").innerHTML = result3;
+
+	var busc2 = document.getElementById("buscado3").innerHTML;
+	var nuevobusc2 = busc2.replace(/(\x40;)/gm,"&gt");//&gt_simbolo >
+	nuevobusc2 = nuevobusc2.replace(/(\x23;)/gm,"&lt");//&lt_simbolo <
+	document.getElementById("buscado2").innerHTML = nuevobusc2;
+
 }
 }
 
